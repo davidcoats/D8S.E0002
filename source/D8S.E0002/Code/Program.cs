@@ -1,5 +1,7 @@
 using System;
 
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace D8S.E0002
 {
@@ -7,7 +9,16 @@ namespace D8S.E0002
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Program.CreateEmptyProvider();
+        }
+
+        static void CreateEmptyProvider()
+        {
+            ServiceCollection serviceCollection = new ServiceCollection();
+
+            ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
+
+            // Now you have a service provider.
         }
     }
 }
